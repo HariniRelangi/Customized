@@ -104,16 +104,6 @@ menuItems.forEach((item, index) => {
                 currentProductImg.src=choosenProduct.colors[index].img;
             });
         });
-//  currentProductSizes.forEach((size, index)=>{
-//     size.addEventListener("click", () => {
-//         currentProductSizes.forEach((size)=>{
-//             size.style.backgroundColor="white";
-//             size.style.color="black";  
-//         });
-//     size.style.backgroundColor="black";
-//     size.style.color="white";
-//     });
-//  }) ;
  
  const buyNow=document.querySelector(".buyNow");
  const payment=document.querySelector(".payment");
@@ -126,4 +116,158 @@ menuItems.forEach((item, index) => {
     payment.style.display="none";
  })
 
+ const loginNow=document.querySelector(".loginNow");
+ const login2=document.querySelector(".login2");
+ const close1=document.querySelector(".close1");
+ const signupNow=document.querySelector(".signupNow");
+ const signup2=document.querySelector(".signup2");
+ const close2=document.querySelector(".close2");
 
+ loginNow.addEventListener("click", ()=> {
+    login2.style.display="flex";
+ });
+ close1.addEventListener("click", ()=>{
+    login2.style.display="none";
+ });
+ signupNow.addEventListener("click", ()=>{
+    signup2.style.display="flex";
+ });
+ close2.addEventListener("click", ()=>{
+    signup2.style.display="none";
+ });
+
+// code for cart
+ 
+const product=[
+    {
+        id:0,
+        image:'./img/TB6.png',
+        title:'Thread Bangles',
+        price:300,
+    },
+    {
+        id:1,
+        image:'img/G3.png',
+        title:'Embroidary Gift',
+        price:600,
+    },
+    {
+        id:2,
+        image:'img/LA3.png',
+        title:'Lipon Article',
+        price:600,
+    },
+    {
+        id:3,
+        image:'img/D5.png',
+        title:'Decoratives',
+        price:400,
+    },    
+    {
+        id:4,
+        image:'img/TB7.png',
+        title:'Thread Bangles',
+        price:300,
+    },
+    {
+        id:5,
+        image:'img/G4.png',
+        title:'Embroidary Gift',
+        price:800,
+    },
+    {
+        id:6,
+        image:'img/LA4.png',
+        title:'Lipon Article',
+        price:1000,
+    },
+    {
+        id:7,
+        image:'img/D6.png',
+        title:'Decoratives',
+        price:400,
+    },
+    {
+        id:8,
+        image:'img/TB8.png',
+        title:'Thread Bangles',
+        price:250,
+    },
+    {
+        id:9,
+        image:'img/G5.png',
+        title:'Embroidary Gift',
+        price:900,
+    },
+    {
+        id:10,
+        image:'img/LA5.png',
+        title:'Lipon Article',
+        price:900,
+    },
+    {
+        id:11,
+        image:'img/D7.png',
+        title:'Decoratives',
+        price:300,
+    },
+];
+const categories=[...new Set(product.map((item)=>
+    {return item}))]
+    let i=0;
+    document.getElementById('root').innerHTML=categories.map((item)=>
+    {
+        var {image, title, price}=item;
+        return(
+            `<div class='box'>
+                <div class='img-box'>
+                    <img class='images' src=${image}></img>
+                </div> 
+                <div class='bottom'>
+                    <p>${title}</p>
+                    <h2>$ ${price}.00</h2>`+
+                    "<button class='cart-button' onclick='addtocart("+(i++)+")'>Add to cart</button>"+
+                `</div>
+            </div>` 
+        )
+    }).join('')
+
+var cart=[];
+function addtocart(a){
+    cart.push({...categories[a]});
+    displaycart();
+}
+function delElement(a){
+    cart.splice(a, 1);
+    displaycart();
+}
+function displaycart(a){
+    let j=0 ,total=0;
+    document.getElementById("count").innerHTML=cart.length;
+    if(cart.length==0){
+        document.getElementById("cartItem").innerHTML="Your cart is empty";
+        document.getElementById("total").innerHTML="$ "+0+".00";
+    }
+    else{
+        document.getElementById("cartItem").innerHTML=cart.map((items)=>
+        {
+            var {image, title, price}=items;
+            total= total+price;
+            document.getElementById("total").innerHTML="$ "+total+".00";
+            return(
+                `<div class='cart-item'>
+                    <div class='row-img'>
+                        <img class='rowimg' src=${image}>
+                    </div>
+                    <p style='font-size:20px;'>${title}</p>
+                    <h2 style='font-size:17px;'>$ ${price}.00</h2>`+
+                    "<i class='fa-solid fa-trash' onclick='delElement("+(j++) +")'></i></div>"
+            );
+        }).join('')
+    }
+}
+const checkOut=document.querySelector(".checkOut");
+
+ checkOut.addEventListener("click", ()=> {
+    payment.style.display="flex";
+ });

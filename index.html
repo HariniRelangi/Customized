@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>MY STORE</title>
 </head>
+
+
+
 <body>
    <nav id="nav">
     <div class="navTop">
        <div class="navItem">
         <!-- <img src="./img/1.png" alt=""> -->
-        <h1>Customized</h1>
+        <h1>CUSTOMIZED</h1>
        </div>
        <div class="navItem">
             <div class="search">
@@ -20,17 +23,64 @@
                 <img src="./img/search.png" width="17" height="16" alt="">
             </div>
        </div>
+       <!-- <div class="login_signup"> -->
        <div class="navItem">
-            <span class="limitedOffer">Limited Offer</span>
+            <div class="navit">
+            <!--login page-->
+                <span class="loginNow">Login/ </span>
+                <form action="#">
+                    <div class="login2">
+                        <h1 class="loginTitle">Login</h1>
+                        <label style="color:rgb(70, 70, 199)">Username</label>
+                        <input type="text" placeholder="Enter Username" class="loginInput">
+                        <label style="color:rgb(70, 70, 199)">Password</label>
+                        <input type="text" placeholder="Enter password" class="loginInput">
+                        <button class="login3">Login</button>
+                        <span class="close1">X</span>
+                        
+                        <div class="login_signup">Don't have an Acoount? <a href='#' id="signUp">Signup</a></div>
+                    </div>
+                </form>
+    
+                <span class="signupNow">Signup</span>
+                <form action="#">
+                    <div class="signup2">
+                        <h1 class="loginTitle">Signup</h1>
+                        <label style="color:rgb(70, 70, 199)">Username</label>
+                        <input type="text" placeholder="Enter Username" class="loginInput">
+                        <label style="color:rgb(70, 70, 199)">Create Password</label>
+                        <input type="text" placeholder="Enter password" class="loginInput">
+                        <label style="color:rgb(70, 70, 199)">Confirm Password</label>
+                        <input type="text" placeholder="Enter password" class="loginInput">
+                        <button class="login3">SignUp</button>
+                        <span class="close2">X</span>
+                        
+                        <div class="login_signup">Already have an Acoount? <a href='#' id="signUp">Login</a></div>
+                    </div>
+                </form>
+            </div>
        </div>
+       
+       <div class="navItem">
+            <div class="header">
+                <a href="#container1">
+                    <div class="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <p id="count"  style="color:white">0</p> 
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
+    <!--    NAV BOTTOM    -->
     <div class="navBottom">
-        <h3 class="menuItem">Thread Bangles</h3>
-        <h3 class="menuItem">Embroidary Gifts</h3>
-        <h3 class="menuItem">Lipon Articles</h3>
-        <h3 class="menuItem">Decoratives</h3>
-    </div>
+        <h3 class="menuItem">THREAD BANGLES</h3>
+        <h3 class="menuItem">EMBROIDARY GIFTS</h3>
+        <h3 class="menuItem">LIPON ARTICLES</h3>
+        <h3 class="menuItem">DECORATIVES</h3>
+    </div>  
    </nav>
+
    <div class="slider">
         <div class="sliderWrapper">
             <div class="sliderItem">
@@ -81,7 +131,7 @@
         <div class="feature">
             <img class="featureIcon" src="./img/return.png"  width="60px" alt="">
             <span class="featureTitle">30 DAYS RETURN</span>
-            <span class="featureDesc">No question return and easy refund in 14 days.</span>
+            <span class="featureDesc">No questions on return and easy refund in 14 days.</span>
         </div>
         <div class="feature">
             <img class="featureIcon" src="./img/giftcard.png" width="60px" alt="">
@@ -94,6 +144,11 @@
             <span class="featureDesc">Keep in touch via email and support system.</span>
         </div>
     </div>
+    <!-- ----------------------root ----------------->
+    <div class="container2">
+        <div id="root"></div>
+    </div>
+
     <div class="product" id="product">
         <img src="./img/TB2.png" alt="" class="productImg">
         <div class="productDetails">
@@ -104,15 +159,10 @@
                 <div class="color"></div>
                 <div class="color"></div>
             </div>
-            <!-- <div class="sizes">
-                <div class="size">2-2</div>
-                <div class="size">2-4</div>
-                <div class="size">2-6</div>
-                <div class="size">2-8</div>
-            </div> -->
             <button class="buyNow">Buy Now!</button>
         </div>
-        <div class="payment">
+
+        <div id="p" class="payment">
             <h1 class="payTitle">Personal Information</h1>
            <label>Full Name</label>
            <input type="text" placeholder="Enter your Name" class="payInput">
@@ -120,21 +170,39 @@
            <input type="text" placeholder="Enter phone Number" class="payInput">
            <label>Address</label>
            <input type="text" placeholder="Enter your address"class="payInput">
-            <h4 class="payTitle">UPI(GPay/PhonePe/Paytm)</h4>
-            <!-- <div class="payInfo"> -->
+            <h4 class="payTitle">UPI(GPay/PhonePe/Paytm)</h4> 
+            <div class="payInfo">
                 <label>UPI ID</label>
                 <input type="text" placeholder="Enter your UPI ID" class="payInput">
-            <!-- </div> -->
+            </div>
             <button class="placeOrder">Place Order!</button>
             <span class="close">X</span>
         </div>
     </div>
+
+    <!--  My Cart page  -->
+   
+    <div id="container1">
+        <div class="sidebar">
+            <div class="head">
+                <p>My Cart</p>
+            </div>
+            <div id="cartItem">Your cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">$ 0.00</h2>
+                <a href="#p"><button class="checkOut">CheckOut</button></a>
+            </div>
+        </div>
+    </div>
+
     <div class="nsItem">
         <h3 class="nsTitle">New Arrivals</h3>"
         <a href="#nav">
             <button class="nsButton">CHOOSE YOUR FAVOURITES</button>
         </a>
     </div>
+    
     <footer>
             <div class="footer1">
                 <div class="footerMenu">
@@ -151,7 +219,7 @@
                     <h1 class="fMenuTitle">Our Services</h1>
                     <ul class="fList">
                         <li class="fListItem">Bangles</li>
-                        <li class="fListItem">Gifts</li>
+                        <li class="fListItem">Embroidary Gifts</li>
                         <li class="fListItem">Lipon Articles</li>
                         <li class="fListItem">Decoratives</li>
                         <li class="fListItem">Hand Crafts</li>
@@ -162,7 +230,7 @@
                     <ul class="fList">
                         <li class="fListItem">Call : 9000000001</li>
                         <li class="fListItem">Gmail : customized@gmail.com</li>
-                        <li class="fListItem">Follow us @Instagram : customized_Your_Things</li>
+                        <li class="fListItem">Follow us @Instagram : customized_Things</li>
                     </ul>
                 </div>
             </div>
